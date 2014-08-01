@@ -1,2 +1,3 @@
-preview_github_readme*
+readme/*
 *.swp
+node_modules

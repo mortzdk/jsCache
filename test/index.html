@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>JSCache Test Suite</title>
+
+		<!-- qUnit -->
+		<link rel="stylesheet"
+		      href="css/libs/qunit-1.14.0.css"
+			  type="text/css"
+			  media="all" />
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and 
+			 media queries -->
+		<!--[if lt IE 9]>
+			<link href="//cdn.jsdelivr.net/respond/1.4.2/cross-domain/respond-proxy.html"
+				  id="respond-proxy"
+				  rel="respond-proxy" />
+			<link href="images/respond.proxy.gif"
+				  id="respond-redirect"
+				  rel="respond-redirect" />
+
+			<script type="text/javascript"
+			        src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.min.js">
+			</script>
+			<script type="text/javascript"
+			        src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js">
+			</script>
+		<![endif]-->
+
+		<!-- jQuery -->
+		<script type="text/javascript"
+		        src="js/libs/jquery-1.11.1.js">
+		</script>
+
+		<!-- qUnit -->
+		<script type="text/javascript"
+		        src="js/libs/qunit-1.14.0.js">
+		</script>
+
+		<!-- Blanket -->
+		<script type="text/javascript"
+		        src="js/libs/blanket.min.js"
+				data-cover-flags="debug">
+		</script>
+		<script>
+			if (location.href.match(/(\?|&)gruntReport($|&|=)/)) {
+				blanket.options("reporter", "js/libs/grunt-reporter.js");
+			}
+		</script>
+
+		<!-- JSCache -->
+		<script type="text/javascript"
+		        src="js/JSCache.js"
+				data-cover>
+		</script>
+
+		<!-- Tests -->
+		<script type="text/javascript"
+		        src="js/tests/initialize.js">
+		</script>
+		<script type="text/javascript"
+		        src="js/tests/variables.js">
+		</script>
+		<script type="text/javascript"
+		        src="js/tests/version.js">
+		</script>
+		<script type="text/javascript"
+		        src="js/tests/detect.js">
+		</script>
+		<script type="text/javascript"
+		        src="js/tests/get.js">
+		</script>
+		<script type="text/javascript"
+		        src="js/tests/remove.js">
+		</script>
+		<script type="text/javascript"
+		        src="js/tests/clear.js">
+		</script>
+		<script type="text/javascript"
+		        src="js/tests/ready.js">
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<h1 id="qunit-header">
+				JSCache Test Suite
+			</h1>
+			<h2 id="qunit-banner">
+			</h2>
+			<div id="qunit-testrunner-toolbar">
+			</div>
+			<h2 id="qunit-userAgent">
+			</h2>
+			<ol id="qunit-tests">
+			</ol>
+			<div id="qunit">
+			</div>
+			<div id="qunit-fixture">
+			</div>
+		</div>
+	</body>
+</html>
