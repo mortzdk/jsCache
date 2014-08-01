@@ -166,12 +166,12 @@
 	var _ = new Helper();
 
 	function JSCache() {
-    	var self = this,
+		var self = this,
 
 		/**
 		 * The current version of JSCache.
 		 */
-    	version = 2.0,
+		version = 2.0,
 
 		/**
 		 * The prefix appended to the key when adding, getting or removing an 
@@ -179,30 +179,30 @@
 		 */
 		prefix = "JSCache_";
 
-    	/**
-    	 * Determines when the cached files is to expire i.e. when to look for 
-    	 * a new version of the files.
-    	 *
-    	 * Default: 432000000 = 5*24*60*60*1000 (5 Days in milliseconds)
-    	 */
-    	self.expires = 432000000;
-    
-    	/**
-    	 * Determines when the loading of files is to timeout and fallback to 
-    	 * ordinary loading of files.
-    	 *
-    	 * Default: 5000 = 5*1000 (5 seconds)
-    	 */
-    	self.timeout = 5000;
-  
-    	/**
-    	 * Function that returns the version of the JSCache object.
+		/**
+		 * Determines when the cached files is to expire i.e. when to look for 
+		 * a new version of the files.
+		 *
+		 * Default: 432000000 = 5*24*60*60*1000 (5 Days in milliseconds)
+		 */
+		self.expires = 432000000;
+
+		/**
+		 * Determines when the loading of files is to timeout and fallback to 
+		 * ordinary loading of files.
+		 *
+		 * Default: 5000 = 5*1000 (5 seconds)
+		 */
+		self.timeout = 5000;
+
+		/**
+		 * Function that returns the version of the JSCache object.
 		 * 
 		 * @return [String] (The version of the current JSCache object)
-    	 */
-    	self.version = function () {
-    		return version;
-    	};
+		 */
+		self.version = function () {
+			return version;
+		};
 
 		/**
 		 * Function that takes a key and request the data associated with the 
@@ -297,7 +297,7 @@
 		 */
 		self.clear = function () {
 			var i,
-			    prefixedKey,
+				prefixedKey,
 				key,
 				regexp = /^JSCache_(.*)$/;
 
@@ -412,6 +412,7 @@
 				// Clear all events to avoid memory-leaks.
 				_.unbind(document, "DOMContentLoaded", change)
 				 .unbind(document, "readystatechange", change)
+				 .unbind(document, "load", change)
 				 .unbind(window, "load", change);
 
 				// Call the callback functions.
@@ -452,6 +453,7 @@
 		// cross-browser support in main document and iframe.
 		_.bind(document, "DOMContentLoaded", change)
 		 .bind(document, "readystatechange", change)
+		 .bind(document, "load", change)
 		 .bind(window, "load", change);
 
 		// Checkup on the readystate to have support for old IE versions.
